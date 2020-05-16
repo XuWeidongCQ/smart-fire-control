@@ -4,8 +4,18 @@ import router from './router'
 import store from './store'
 
 import './css/remove-default.css'
+import './css/box.css'
+import './css/exclusive.css'
+import './css/flex.css'
+
+import 'font-awesome/css/font-awesome.min.css'
+
+import util from './utils/util'
+import http from './api/http'
 
 Vue.config.productionTip = false
+Vue.prototype.$util = util
+Vue.prototype.$http = http
 
 new Vue({
   router,
