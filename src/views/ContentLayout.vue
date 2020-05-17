@@ -23,11 +23,12 @@ export default {
 
 <style scoped>
 .main-container {
-    min-width: 1920px;
-    height: 100vh;
+    width: 1920px;
+    min-height: 100vh;
     background-image: url('../assets/bg01_small.png');
     background-position: center;
-    background-size: cover
+    background-size: cover;
+    margin: 0 auto;
 }
 .nav {
     height: 50px;

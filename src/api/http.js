@@ -35,8 +35,6 @@ axiosInst.interceptors.response.use(res=>{
     case "get":
       if (code === 200){
         return resData;
-      } else {
-        return resData
       }
 
     //2.提交数据，对反馈信息进行统一处理

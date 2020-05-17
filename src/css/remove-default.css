@@ -15,16 +15,15 @@ li {
     list-style: none;
 }
 
-input:focus {
+input:focus,
+select:focus {
     outline: 0;
 }
 
 button:focus {
     outline: 0;
 }
-button {
+
+button,select {
     cursor: pointer;
 }
-/* button:active {
-   border: 0
-} */

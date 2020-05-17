@@ -5,7 +5,7 @@
                 <increase-dev></increase-dev>
             </div>
             <div class="xu-col-5">
-                <baidu-map></baidu-map>
+                <map-wrapper></map-wrapper>
             </div>
             <div class="xu-col-5">
                 <register-dev></register-dev>
@@ -23,15 +23,16 @@
 </template>
 
 <script>
-import IncreaseDev from './HomeLayout/IncreaseDev.vue'
-import Map from './HomeLayout/Map.vue'
-import RegisterDev from './HomeLayout/RegisterDev.vue'
-import AlertInfos from './HomeLayout/AlertInfos.vue'
-import PieCharts from './HomeLayout/PieCharts.vue'
+import IncreaseDev from './HomePageLayout/IncreaseDev.vue'
+import Map from './HomePageLayout/Map.vue'
+import RegisterDev from './HomePageLayout/RegisterDev.vue'
+import AlertInfos from './HomePageLayout/AlertInfos.vue'
+import PieCharts from './HomePageLayout/PieCharts.vue'
+
 export default {
     components:{
         IncreaseDev,
-        'baidu-map':Map,
+        'map-wrapper':Map,
         RegisterDev,
         AlertInfos,
         PieCharts

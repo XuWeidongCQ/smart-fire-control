@@ -19,7 +19,7 @@ const routes = [
    children: [
      {
        path:'',
-       component :() => import('@/components/ContentLayout/HomeLayout.vue')
+       component :() => import('@/components/ContentLayout/HomePageLayout.vue')
      }
    ]
  }
