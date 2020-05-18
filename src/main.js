@@ -4,12 +4,13 @@ import router from './router'
 import store from './store'
 
 
-
 import './css/remove-default.css'
 import './css/box.css'
 import './css/exclusive.css'
 import './css/flex.css'
 import './css/table.css'
+import './css/button.css'
+import './css/badge.css'
 
 import 'font-awesome/css/font-awesome.min.css'
 

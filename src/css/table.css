@@ -53,14 +53,5 @@
 }
 
 
-/*5.8 固定表头表格*/
-.xu-table-fix thead{
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-}
-.xu-fix-table-wrapper {
-    position: relative;
-    overflow: auto;
-}
+
+

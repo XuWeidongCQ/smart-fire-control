@@ -31,8 +31,8 @@ const HOME_PAGE_API = {
       url:'/caracara/data/device/uuid'
     },
   
-    //6.获取最新报警信息表
-    getAlarm:{
+    //6.获取未处理的报警信息表
+    getUnprocessAlarm:{
       method:'get',
       url:'/caracara/info/alarm/unprocessed',
     },
