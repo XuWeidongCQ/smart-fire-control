@@ -3,7 +3,7 @@
        <div class="nav">
            <navbar></navbar>
        </div>
-       <div class="content-wrapper">
+       <div class="page-wrapper">
           <router-view/>
        </div>
        <div class="footer">
@@ -34,8 +34,8 @@ export default {
     height: 50px;
     /* overflow: hidden; */
 }
-.content-wrapper {
-    margin-top: 15px;
+.page-wrapper {
+    margin-top: 10px;
 }
 
 

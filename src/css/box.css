@@ -4,6 +4,7 @@
     position: relative;
     color: white;
     border: #3a9fd3 1px solid;
+    box-sizing: border-box;
 }
 .xu-box::before {
     content: '';

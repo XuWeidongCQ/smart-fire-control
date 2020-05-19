@@ -1,21 +1,21 @@
 <template>
     <div class="content-wrapper">
         <div class="xu-row h500">
-            <div class="xu-col-2">
+            <div class="xu-col-2 h100">
                 <increase-dev></increase-dev>
             </div>
-            <div class="xu-col-5">
+            <div class="xu-col-5 h100">
                 <map-wrapper></map-wrapper>
             </div>
-            <div class="xu-col-5">
+            <div class="xu-col-5 h100">
                 <register-dev></register-dev>
             </div>
         </div>
         <div class="xu-row h320 mt15">
-            <div class="xu-col-7">
+            <div class="xu-col-7 h100">
                 <alert-infos></alert-infos>
             </div>
-            <div class="xu-col-5">
+            <div class="xu-col-5 h100">
                 <pie-charts></pie-charts>
             </div>
         </div>
@@ -42,7 +42,6 @@ export default {
 
 <style scoped>
 .content-wrapper {
-    /* height:800px; */
     padding: 0 15px;
 }
 .h500 {

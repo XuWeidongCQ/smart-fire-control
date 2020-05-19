@@ -144,12 +144,12 @@ export default {
 .unhandle-infos-wrapper {
   flex:2;
   margin-right: 10px;
-  height: 270px;
+  height: 260px;
 }
 .handle-infos-wrapper {
   flex:1;
   margin-left: 10px;
-  height: 270px;
+  height: 260px;
 }
 .handle-infos-wrapper td {
   font-size: 12px;
