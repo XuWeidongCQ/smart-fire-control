@@ -39,7 +39,7 @@ export default {
     display: flex;
     background-color:rgba(255, 255, 255, 0.4);
     border-radius: 20px;
-    animation: 1s ease 0s moveIn;
+    animation: moveIn 1s ease 0s;
    
 }
 .login-form-wrapper > div {

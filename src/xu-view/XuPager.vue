@@ -1,14 +1,14 @@
 <template>
   <div class="wrapper" v-if="show">
       <ul>
-            <li v-show="pageNow !== 1" class="show-border mr5" @click="previousPage">上一页</li>
+            <li class="show-border mr5" @click="previousPage">上一页</li>
             <li v-for="(page,index) in pageNumberList"
                 :class="{'show-border':page !== '...','active':page===pageNow}"
                 @click="choosePage(page)" 
                 :key="index">
                 {{ page }}
             </li>
-            <li class="show-border ml5" v-show="pageNow !== pageNum" @click="nextPage">下一页</li>
+            <li class="show-border ml5"  @click="nextPage">下一页</li>
             <li>共{{ pageNum }}页</li>
             <li>
                 <span>跳到第</span>
@@ -86,14 +86,18 @@ export default {
             }
         },
         previousPage:function(){
-            this.pageNow--
-            this.adjustPageNumberList(this.pageNow)
-            this.$emit('hasSelectedPage',this.pageNow)
+            if(this.pageNow !== 1){
+                this.pageNow--
+                this.adjustPageNumberList(this.pageNow)
+                this.$emit('hasSelectedPage',this.pageNow)
+            }
         },
         nextPage:function(){
-            this.pageNow++
+            if(this.pageNow !== this.pageNum){
+                this.pageNow++
             this.adjustPageNumberList(this.pageNow)
-            this.$emit('hasSelectedPage',this.pageNow)
+                this.$emit('hasSelectedPage',this.pageNow)
+            }
         }
         
     },

@@ -21,7 +21,12 @@
           <tbody>
             <tr v-for="project in projectList.slice((pageNow-1)*MAX_NUM,pageNow*MAX_NUM)" 
                 :key="project.projectId">
-              <td>{{ project.projectName }}</td>
+              <td>
+                <span :class="{'link':project.deviceNumber > 0}" 
+                      @click="project.deviceNumber > 0 && showModal(project)">
+                  {{ project.projectName }}
+                </span>
+              </td>
               <td>{{ project.deviceNumber }}</td>
               <td>{{ project.location }}</td>
               <td>{{ project.projectFinishDate }}</td>
@@ -29,21 +34,29 @@
           </tbody>
         </table>       
       </div>
-      <!-- 分页器 -->
+        <!-- 分页器 -->
         <div class="pager-wrapper">
           <xu-pager :show="Math.ceil(projectList.length / MAX_NUM) > 1" 
                   :pageNum="Math.ceil(projectList.length / MAX_NUM)" 
                   @hasSelectedPage="togglePage">
           </xu-pager>
         </div>
+        <!-- 显示弹框 -->
+        <sensor-data-modal 
+          :project="projectNow"
+          @close='isModalShow = false' 
+          v-if='isModalShow'>
+        </sensor-data-modal>
     </div>
 </template>
 
 <script>
 import XuPager from '@/xu-view/XuPager.vue'
+import SensorDataModal from '@/components/share-components/SensorDataModal.vue'
 export default {
     components:{
-      XuPager
+      XuPager,
+      SensorDataModal
     },
     data(){
       return {
@@ -51,7 +64,9 @@ export default {
         projectListCache: [],
         MAX_NUM:10, //每页显示的数目
         pageNow:1,
-        projectName:''//用于查询的项目名称
+        projectName:'',//用于查询的项目名称,
+        projectNow:null,
+        isModalShow:false,
       }
     },
     methods:{
@@ -64,14 +79,22 @@ export default {
           this.projectListCache = this.projectList
         })
       },
+      //切换页码
       togglePage:function(page){
         this.pageNow = page
       },
       //查询项目
       searchProjects:function(){
-        this.projectList = this.projectList.filter(ele => 
-          ele.projectName.includes(this.projectName)
-        )
+        if(this.projectName !== ''){
+          this.projectList = this.projectList.filter(ele => 
+            ele.projectName.includes(this.projectName)
+          )
+        }
+      },
+      //显示弹框
+      showModal:function(project){
+        this.projectNow = project
+        this.isModalShow = true
       }
     },
     watch:{

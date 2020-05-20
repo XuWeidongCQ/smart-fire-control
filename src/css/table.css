@@ -17,7 +17,10 @@
     padding: 8px 4px;
 }
 
-
+/* 没有边框 */
+.xu-table-no-border td {
+    border: 0;
+}
 /*5.1 带边框的表格样式*/
 .xu-table-border th, .xu-table-border td{
     border: 1px solid #ebeef5;
@@ -37,7 +40,6 @@
 }
 /*5.5 悬停表格*/
 .xu-table-hover tbody tr:hover {
-    cursor: pointer;
     background: rgba(30, 89, 124, 0.7) !important;
 }
 /*5.6 表格头部颜色*/
