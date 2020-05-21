@@ -5,8 +5,29 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    map:{
+      mapCenter:'重庆',
+      infoWindowPos:{},
+      infoWindowShow:false,
+      projectNow:{}
+    }
   },
   mutations: {
+    changeMapCenter:function(state,payload){
+      state.map.mapCenter = payload.mapCenter
+    },
+    changeInfoWindowPos:function(state,payload){
+      state.map.infoWindowPos = payload
+    },
+    showInfoWindow:function(state){
+      state.map.infoWindowShow = true
+    },
+    closeInfoWindow:function(state){
+      state.map.infoWindowShow = false
+    },
+    changeProjectNow:function(state,payload){
+      state.map.projectNow = payload
+    }
   },
   actions: {
   },

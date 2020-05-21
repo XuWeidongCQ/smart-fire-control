@@ -4,7 +4,9 @@
            <navbar></navbar>
        </div>
        <div class="page-wrapper">
-          <router-view/>
+           <keep-alive>
+                <router-view/>
+           </keep-alive>
        </div>
        <div class="footer">
            <span>重庆大学微系统研究中心©2019</span>

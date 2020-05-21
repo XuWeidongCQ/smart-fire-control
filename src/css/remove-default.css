@@ -25,13 +25,11 @@ input[type="number"]{
 
 
 input:focus,
+button:focus,
 select:focus {
     outline: 0;
 }
 
-button:focus {
-    outline: 0;
-}
 
 button {
     border: 0;

@@ -95,6 +95,10 @@ export default {
       showModal:function(project){
         this.projectNow = project
         this.isModalShow = true
+        this.$store.commit('changeProjectNow',project)
+        this.$store.commit('changeMapCenter',{mapCenter:{lng:project.longitude,lat:project.latitude}})
+        this.$store.commit('changeInfoWindowPos',{lng:project.longitude,lat:project.latitude})
+        this.$store.commit('showInfoWindow')
       }
     },
     watch:{

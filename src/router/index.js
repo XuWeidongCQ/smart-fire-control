@@ -20,6 +20,10 @@ const routes = [
      {
        path:'',
        component :() => import('@/components/ContentLayout/HomePageLayout.vue')
+     },
+     {
+       path:'/info',
+       component:() => import('@/components/ContentLayout/InfoPageLayout.vue')
      }
    ]
  }

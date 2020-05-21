@@ -11,6 +11,7 @@ import './css/flex.css'
 import './css/table.css'
 import './css/button.css'
 import './css/badge.css'
+import './css/form.css'
 
 import 'font-awesome/css/font-awesome.min.css'
 

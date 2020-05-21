@@ -22,7 +22,9 @@
               <td>{{item.dateName | formatterMonthName}}</td>
               <td>{{item.devNum}}</td>
               <td>
-                  <span :class="{'link':item.projectNum>0}">{{item.projectNum}}</span>
+                  <span :class="{'link':item.projectNum>0}" @click="showModal(item.dateName)">
+                    {{item.projectNum}}
+                  </span>
               </td>
             </tr>
           </tbody>
@@ -30,28 +32,35 @@
       </div>
       <div class="xu-box-foot">
         <div class="foot-content-wrapper">
-          <div><p>项目合计</p><span>{{ sumNum }}</span></div>
-          <div><p>项目最大值</p><span>{{ maxNum }}</span></div>
-          <div><p>项目最小值</p><span>{{ minNum }}</span></div>
+          <div><p>新增项目合计</p><span>{{ sumIncProject }}</span></div>
+          <div><p>新增设备合计</p><span>{{ sumIncDevice }}</span></div>
         </div>
       </div>
       <!-- 弹框 -->
+      <new-inc-project-modal 
+        @close='isModalShow = false'
+        :yearNow="yearNow"
+        :monthNow="monthNow" 
+        v-if="isModalShow">
+      </new-inc-project-modal>
     </div>
 </template>
 
 <script>
-import XuModal from '@/xu-view/modal/XuModal.vue'
+import NewIncProjectModal from './IncreaseDevComp/NewIncProjectModal.vue'
 export default {
-  components:{XuModal},
+  components:{NewIncProjectModal},
   data(){
     return {
       monthList: [],
       yearList: [],
-      yearNow: this.$util.getFormatterDate().YYYY
+      yearNow: this.$util.getFormatterDate().YYYY,
+      monthNow:'',
+      isModalShow:false
     }
   },
   methods:{
-    getData:function(year = this.yearNow){
+    getData:function(year=this.yearNow){
       this.yearList = [];
       this.monthList = []
       this.$http['getMonthlyProjects']({params:{year:year}})
@@ -68,22 +77,24 @@ export default {
           this.yearList.push(ele.dateName)
         })
       })
+    },
+    //显示弹框
+    showModal:function(monthNow){
+      this.monthNow = monthNow
+      this.isModalShow = true
     }
   },
   computed:{
-    maxNum:function(){
-      return Math.max(...this.monthList.map(ele => ele.projectNum))
-    },
-    minNum:function(){
-      return Math.min(...this.monthList.map(ele => ele.projectNum))
-    },
-    sumNum:function(){
+    sumIncProject:function(){
         return this.$util.sum(this.monthList.map(ele => ele.projectNum))
+    },
+    sumIncDevice:function(){
+        return this.$util.sum(this.monthList.map(ele => ele.devNum))
     }
   },
   watch:{
-    yearNow:function(oldVal,val){
-      this.getData()
+    yearNow:function(newVal){
+      this.getData(newVal)
     }
   },
   filters:{
@@ -133,12 +144,16 @@ export default {
   flex: 1;
   text-align: center;
 }
-.foot-content-wrapper > div:nth-child(2) {
-  border-left: 1px solid #ededed;
-  border-right: 1px solid #ededed;
-}
 .foot-content-wrapper > div > p {
   margin-bottom: 5px;
+}
+.foot-content-wrapper > div > span {
+  display: inline-block;
+  width: 65px;
+  padding: 2px 0;
+  border-radius: 50px;
+  background-color: #1296db;
+  color: #b5c334;
 }
 .year-select {
   float: right;

@@ -1,6 +1,7 @@
 
 import axios from 'axios'
 import homePageApi from './home-page-api'
+import infoPageApi from './info-page-api'
 
 let axiosInst = axios.create({
   baseURL:'https://www.zhxf.yuhualab.com:8080'
@@ -40,30 +41,30 @@ axiosInst.interceptors.response.use(res=>{
     //2.提交数据，对反馈信息进行统一处理
     case "post":
       if (code === 200){
-        XuAlert('提交成功','success');
+        // XuAlert('提交成功','success');
         return resData;
       } else {
-        XuAlert('提交失败-'+msg,'error');
+        // XuAlert('提交失败-'+msg,'error');
         return resData
       }
 
     //3.删除数据，成功删除返回空字符串，否则返回提示字符串
     case "delete":
       if (code === 200){
-        XuAlert('删除成功','success');
+        // XuAlert('删除成功','success');
         return resData;
       } else {
-        XuAlert('删除失败-'+msg,'error');
+        // XuAlert('删除失败-'+msg,'error');
         return resData
       }
 
     //4.修改数据,目前没有做任何限制
     case "put":
       if (code === 200){
-        XuAlert('修改成功','success');
+        // XuAlert('修改成功','success');
         return resData;
       } else {
-        XuAlert('修改失败-'+msg,'error');
+        // XuAlert('修改失败-'+msg,'error');
         return resData
       }
     default:
@@ -76,7 +77,7 @@ axiosInst.interceptors.response.use(res=>{
 
 // let allApi = {};
 let Http = {};//存放所有请求api的方法
-const allApi = Object.assign({},homePageApi);
+const allApi = Object.assign({},homePageApi,infoPageApi);
 
 for (let key in allApi){
   let method = allApi[key]['method'];
