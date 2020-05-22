@@ -33,7 +33,7 @@ export default {
 .modal-wrapper {
   position: relative;
   animation: ZoomIn 0.2s linear 0s;
-  background-color: rgb(45, 76, 114);
+  background-color: rgba(28, 62, 107, 1);
   padding: 10px;
   border:  1px solid #3a9fd3;
 }

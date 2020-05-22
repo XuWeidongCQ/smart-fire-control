@@ -36,7 +36,7 @@
       </div>
         <!-- 分页器 -->
         <div class="pager-wrapper">
-          <xu-pager :show="Math.ceil(projectList.length / MAX_NUM) > 1" 
+          <xu-pager 
                   :pageNum="Math.ceil(projectList.length / MAX_NUM)" 
                   @hasSelectedPage="togglePage">
           </xu-pager>

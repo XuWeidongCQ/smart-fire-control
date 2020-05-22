@@ -49,14 +49,15 @@ export default {
     float: left;
     height: 50px;
     width: 1776px;
-    padding: 10px 0;
+    /* padding: 10px 0; */
 }
 .navbar-wrapper > ul > li{
     display: inline-block;
-    line-height: 30px;
+    line-height: 50px;
     box-sizing: content-box;
     font-size: 20px;
     font-weight: 900;
+    height: 100%;
     box-sizing: border-box;
     padding: 0 10px;
     cursor: pointer;

@@ -73,8 +73,6 @@ export default {
     data(){
       return {
         projectList: [],
-        // infoWindowPos:null,
-        // projectNow:{},
         isModalShow:false,
       }
     },
@@ -118,7 +116,6 @@ export default {
       },
       //显示弹框
       showModal:function(project){
-        this.projectNow = project
         this.isModalShow = true
       }
       //

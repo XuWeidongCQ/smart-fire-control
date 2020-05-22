@@ -142,8 +142,8 @@ export default {
 
 <style scoped>
 .title {
-  font-size: 20px;
   margin-bottom: 10px;
+  color: #05bbca;
   position: relative;
 }
 .stress-chart,
@@ -171,6 +171,6 @@ export default {
   margin: 0 15px;
 }
 .active {
-  background-color: rgba(28, 62, 107);
+  background-color: rgb(19, 43, 75);
 }
 </style>

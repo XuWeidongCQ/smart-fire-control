@@ -78,7 +78,8 @@ export default {
 
 <style scoped>
 .title {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
+  color: #05bbca;
 }
 .table-wrapper {
   max-height: 500px;

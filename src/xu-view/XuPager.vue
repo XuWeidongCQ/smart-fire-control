@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" v-if="show">
+  <div class="wrapper">
       <ul>
             <li class="show-border mr5" @click="previousPage">上一页</li>
             <li v-for="(page,index) in pageNumberList"
@@ -25,11 +25,6 @@
 <script>
 export default {
     props:{
-        //是否显示
-        show:{
-            type:Boolean,
-            default:false
-        },
         //页码数目
         pageNum:{
             type:Number,
@@ -156,7 +151,6 @@ li > input {
     color: #f7f7f7;
     border-radius: 3px;
 }
-
 .nav-page-btn:hover {
     background-color: #33629e;
 }

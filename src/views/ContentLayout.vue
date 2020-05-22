@@ -39,8 +39,6 @@ export default {
 .page-wrapper {
     margin-top: 10px;
 }
-
-
 .footer {
     margin-top: 10px;
     text-align: center;

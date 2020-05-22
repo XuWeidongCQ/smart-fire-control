@@ -10,9 +10,9 @@
     text-align: start;
     font-size: 14px;
     padding: 8px 4px;
+    color: #41cac0;
 }
 .xu-table td {
-    /*border-top: 1px solid #ebeef5;*/
     border-bottom: 1px solid #ebeef5;
     padding: 8px 4px;
 }
@@ -20,6 +20,12 @@
 /* 没有边框 */
 .xu-table-no-border td {
     border: 0;
+}
+/* 固定每个格子的宽度 */
+.xu-table-fix-width th,
+.xu-table-fix-width td{
+    width:120px;
+    overflow: hidden;
 }
 /*5.1 带边框的表格样式*/
 .xu-table-border th, .xu-table-border td{
@@ -44,7 +50,7 @@
 }
 /*5.6 表格头部颜色*/
 .xu-thead-light tr{
-    background-color: #41cac0;
+    color: #41cac0;
 }
 /*5.7 条纹*/
 .xu-table-strip tbody tr:nth-child(2n-1){

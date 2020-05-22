@@ -52,15 +52,24 @@ export default {
     },
     edit(){
       const data = {}
+      let isVaild = true
       this.formItems.forEach(ele => {
+        if(ele.value === '' && ele.name !== 'remark'){
+          isVaild = false
+          return
+        }
         data[ele.name] = ele.value
       })
-      data.projectId = this.project.projectId
-      this.$http['editOneProject'](data)
-      .then(res => {
-        this.$emit('editSuccess')
-        this.$destroy()
-      })
+      if(isVaild){
+        data.projectId = this.project.projectId
+        this.$http['editOneProject'](data)
+        .then(res => {
+          this.$emit('editSuccess')
+          this.$destroy()
+        })
+      } else {
+        console.log('修改失败')
+      }
     }
   },
   created() {
