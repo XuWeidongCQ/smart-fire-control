@@ -26,6 +26,7 @@
 <script>
 import XuModal from '@/xu-view/modal/XuModal.vue'
 import XuSel from '@/xu-view/form/XuSel.vue'
+import showAlert from '@/xu-view/tips/alert/XuAlert.js'
 const TYPE = {
   '未知':0,
   '储压':1,
@@ -99,7 +100,7 @@ export default {
           this.$emit('addSuccess')
         })
       } else {
-        console.log('提交失败')
+        showAlert('请按照要求填写后再提交','failure')
       }
     }
   },

@@ -20,6 +20,7 @@
 
 <script>
 import XuModal from '@/xu-view/modal/XuModal.vue'
+import showAlert from '@/xu-view/tips/alert/XuAlert.js'
 export default {
   components: {
     XuModal
@@ -65,10 +66,9 @@ export default {
         this.$http['editOneProject'](data)
         .then(res => {
           this.$emit('editSuccess')
-          this.$destroy()
         })
       } else {
-        console.log('修改失败')
+        showAlert('请按照要求修改后再提交','failure')
       }
     }
   },

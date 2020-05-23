@@ -7,6 +7,7 @@
        :scroll-wheel-zoom="true"
        :zoom="10"
        :center="mapCenter"
+       :mapStyle="require('@/assets/map-style.js')"
       >
       <bm-local-search 
       :keyword="location" 

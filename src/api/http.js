@@ -2,6 +2,8 @@
 import axios from 'axios'
 import homePageApi from './home-page-api'
 import infoPageApi from './info-page-api'
+import showAlert from '@/xu-view/tips/alert/XuAlert'
+import showToastr from '@/xu-view/tips/toastr/XuToastr.js'
 
 let axiosInst = axios.create({
   baseURL:'https://www.zhxf.yuhualab.com:8080'
@@ -10,7 +12,14 @@ let axiosInst = axios.create({
 
 //请求拦截器
 axiosInst.interceptors.request.use(config =>{
+  const {method} = config
+  if(method === 'delete'){
+    return new Promise(resolve => {
+      showToastr('确定删除吗？',() => resolve(config))
+    })
+  } else {
     return config;
+  }
 },error => {
   console.log(error);
   return Promise.reject(error)
@@ -41,7 +50,7 @@ axiosInst.interceptors.response.use(res=>{
     //2.提交数据，对反馈信息进行统一处理
     case "post":
       if (code === 200){
-        // XuAlert('提交成功','success');
+        showAlert('提交成功')
         return resData;
       } else {
         // XuAlert('提交失败-'+msg,'error');
@@ -51,7 +60,7 @@ axiosInst.interceptors.response.use(res=>{
     //3.删除数据，成功删除返回空字符串，否则返回提示字符串
     case "delete":
       if (code === 200){
-        // XuAlert('删除成功','success');
+        showAlert('删除成功')
         return resData;
       } else {
         // XuAlert('删除失败-'+msg,'error');
@@ -61,7 +70,7 @@ axiosInst.interceptors.response.use(res=>{
     //4.修改数据,目前没有做任何限制
     case "put":
       if (code === 200){
-        // XuAlert('修改成功','success');
+        showAlert('修改成功')
         return resData;
       } else {
         // XuAlert('修改失败-'+msg,'error');

@@ -63,6 +63,7 @@ export default {
       sensorData:[],
       deviceNow:null,
       isModalShow:false,
+      timer:null
     }
   },
   methods:{
@@ -71,7 +72,11 @@ export default {
       .then(res => {
         const {msg} = res
         this.sensorData = msg
-      })
+        clearInterval(this.timer)
+        this.timer = setInterval(() => {
+          this.getData()
+          }, 10000);
+        })
     },
     close:function(){
       this.$emit('close')
@@ -125,6 +130,9 @@ export default {
   },
   created(){
     this.getData()
+  },
+  beforeDestroy(){
+    clearInterval(this.timer)
   }
 }
 </script>

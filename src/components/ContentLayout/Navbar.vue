@@ -4,12 +4,12 @@
                 <img src="../../assets/login/company_logo.jpg" alt="" height="40px">
         </div>
         <ul>
-            <li :class="{'active':path === '/home'}" @click="routerTo('/home')">
+            <router-link tag="li" active-class="active" exact to="/home">
                 <span class="fa fa-home"> 首页</span>
-            </li>
-            <li :class="{'active':path === '/info'}" @click="routerTo('/info')">
-                <span class="fa fa-edit"> 信息录入</span>
-            </li>
+            </router-link>
+            <router-link tag="li" active-class="active" exact to="/info">
+                <span class="fa fa-edit"> 信息</span>
+            </router-link>
             <li @click="logout">
                 <span class="fa fa-arrow-left"> 退出</span>
             </li>
@@ -20,17 +20,13 @@
 export default {
     data(){
         return {
-            path:Location.hash //???
+           
         }
     },
     methods:{
         logout:function(){
             this.$router.push('/')
         },
-        routerTo(path){
-            this.path = path
-            this.$router.push(path)
-        }
     }
 }
 </script>

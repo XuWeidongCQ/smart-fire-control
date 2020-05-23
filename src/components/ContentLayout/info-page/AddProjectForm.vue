@@ -38,13 +38,18 @@
       </div>
       <div class="btn-wrapper">
         <button class="xu-btn xu-btn-lg xu-btn-cancel" @click="reset()">重置</button>
-        <button class="xu-btn xu-btn-lg xu-btn-success" @click="submit()">提交</button>
+        <button 
+        class="xu-btn xu-btn-lg xu-btn-success" 
+        @click="submit()">
+        提交
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import showAlert from '@/xu-view/tips/alert/XuAlert.js'
 export default {
   props:{
     lngAndLat:{
@@ -61,7 +66,8 @@ export default {
         latitude:'',
         projectFinishDate:this.$util.getFormatterDate().YYYYMMDD,
         remark:''
-      }
+      },
+      cantSubmit: true
     }
   },
   methods:{
@@ -73,6 +79,8 @@ export default {
     },
     //重置按钮
     reset(){
+      this.province = '重庆'
+      this.emitProvince('重庆')
       this.formData.projectName = ''
       this.formData.location = ''
       this.formData.longitude = ''
@@ -84,14 +92,12 @@ export default {
     submit(){
       for(let key in this.formData){
         if(this.formData[key] === '' && key !== 'remark'){
-          console.log('无法提交')
+          showAlert('请按照要求填写后再提交','failure')
           return
         }
       }
       this.$http['addOneProject'](this.formData)
       .then(res => {
-        console.log(res)
-
         this.$emit('submitSuccess')
         this.reset()
       })

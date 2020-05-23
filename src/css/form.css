@@ -19,7 +19,10 @@
   width: 200px;
   margin-right: 5px;
 }
-.form-item > input[type='date'],
+.form-item > input[type='date']{
+  font:inherit;
+  cursor: pointer;
+}
 .form-item > textarea{
   font: inherit;
 }

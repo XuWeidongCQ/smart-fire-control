@@ -59,3 +59,9 @@
     background-color: #dadbdc;
     border: 1px solid #dadbdc;
 }
+
+/* 禁用的button */
+.xu-invalid-btn {
+    opacity: 0.5;
+    pointer-events: none;
+}

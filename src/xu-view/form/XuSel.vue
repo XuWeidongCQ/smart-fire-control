@@ -98,6 +98,8 @@ export default {
   background-color: rgb(22, 47, 80);
 }
 
+
+
 @keyframes slideDownUp {
   from {
     opacity: 0;

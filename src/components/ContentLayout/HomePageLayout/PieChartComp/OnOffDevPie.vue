@@ -40,6 +40,11 @@ const option = {
     ]
 }
 export default {
+    data(){
+        return {
+            timer:null
+        }
+    },
     methods: {
         getData:function(){
             this.$http['getOnlineAndOfflineDevNum']()
@@ -49,11 +54,19 @@ export default {
                 option.dataset.source['y'] = [msg['onlineNumber'],msg['offlineNumber']]
                 echarts.init(this.$refs['chart']).setOption(option)
                 this.$emit('receivedData',{'online':msg['onlineNumber'],'offline':msg['offlineNumber']})
+
+                clearInterval(this.timer)
+                this.timer = setInterval(()=>{
+                    this.getData()
+                },10000)
             })
         }
     },
     created(){
         this.getData()
+    },
+    beforeDestroy(){
+        clearInterval(this.timer)
     }
     
 }

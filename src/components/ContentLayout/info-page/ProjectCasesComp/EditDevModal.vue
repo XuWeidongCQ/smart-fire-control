@@ -26,6 +26,7 @@
 <script>
 import XuModal from '@/xu-view/modal/XuModal.vue'
 import XuSel from '@/xu-view/form/XuSel.vue'
+import showAlert from '@/xu-view/tips/alert/XuAlert.js'
 const TYPE = {
   '未知':0,
   '储压':1,
@@ -94,7 +95,7 @@ export default {
           this.$emit('editSuccess')
         })
       } else {
-        console.log('修改失败')
+        showAlert('请按照要求修改后再提交','failure')
       }
     }
   },

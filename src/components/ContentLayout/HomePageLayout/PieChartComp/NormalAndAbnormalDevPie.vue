@@ -41,7 +41,12 @@ const option = {
     ]
 }
 export default {
-  methods: {
+    data(){
+        return {
+            timer:null
+        }
+    },
+    methods: {
         getData:function(){
             this.$http['getUsingAndUsedDevNum']()
             .then(res => {
@@ -50,11 +55,19 @@ export default {
                 option.dataset.source['y'] = [msg['valid'],msg['invalid'],msg['unknown']]
                 echarts.init(this.$refs['chart']).setOption(option)
                 this.$emit('receivedData',{normal:msg['valid'],abnormal:msg['unknown']+msg['invalid']})
+
+                clearInterval(this.timer)
+                this.timer = setInterval(()=>{
+                    this.getData()
+                },10000)
             })
         }
     },
     created(){
         this.getData()
+    },
+    beforeDestroy(){
+        clearInterval(this.timer)
     }
 }
 </script>

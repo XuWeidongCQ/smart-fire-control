@@ -6,6 +6,7 @@
        :scroll-wheel-zoom="true"
        :zoom="10"
        :center="mapCenter"
+       :mapStyle="require('@/assets/map-style.js')"
       >
         <!-- 比例尺 -->
         <bm-scale anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-scale>

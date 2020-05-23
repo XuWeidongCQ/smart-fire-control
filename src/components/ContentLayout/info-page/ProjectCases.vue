@@ -27,7 +27,7 @@
             <td>
                <button 
                class="xu-btn xu-btn-sm xu-btn-cancel"
-               :class="{'invalid-btn':project.deviceNumber > 0}" 
+               :class="{'xu-invalid-btn':project.deviceNumber > 0}" 
                @click="del(project)">
                删除
                </button>            
@@ -38,7 +38,7 @@
                </button>            
                <button 
                class="xu-btn xu-btn-sm xu-btn-info" 
-               :class="{'invalid-btn':project.deviceNumber === 0}"
+               :class="{'xu-invalid-btn':project.deviceNumber === 0}"
                @click="showLookDevModal(project)">
                查看设备
                </button>            
@@ -159,10 +159,6 @@ export default {
 </script>
 
 <style scoped>
-.invalid-btn {
-  opacity: 0.5;
-  pointer-events: none;
-}
 .pager-wrapper {
   position: absolute;
   right: 10px;

@@ -26,13 +26,13 @@
                 <td>{{ unhandleInfo.uuid }}</td>
                 <td>{{ unhandleInfo.projectLocation }}</td>
                 <td>{{ unhandleInfo.deviceLocation }}</td>
-                <td>{{ unhandleInfo.alarmMessage }}</td>
+                <td><span class="xu-badge xu-badge-danger xu-ellipse-border">{{ unhandleInfo.alarmMessage }}</span></td>
                 <td>{{ unhandleInfo.gmtCreate }}</td>
                 <td>
-                  <button class="btn-search-dev">
+                  <button class="xu-btn xu-btn-sm xu-btn-primary" @click="showModal(unhandleInfo)">
                     <span class="fa fa fa-line-chart"/>
                   </button>
-                  <button class="btn-add-dev">
+                  <button class="xu-btn xu-btn-sm xu-btn-success" @click="handleInfo(unhandleInfo)">
                     <span class="fa fa-check">已处理</span>
                   </button>
                 </td>
@@ -62,17 +62,27 @@
           </table>
         </div>
       </div>
+      <!-- 显示弹窗 -->
+      <history-data-modal 
+      :device="infoNow"
+      v-if="isHistoryModalShow" 
+      @close="isHistoryModalShow = false">
+      </history-data-modal>
     </div>
 </template>
 
 <script>
+import HistoryDataModal from '@/components/share-components/HistoryDataModal.vue'
 export default {
+    components:{HistoryDataModal},
     data(){
       return {
         handleAlarmInfos:[],
         unhandleAlarmInfos:[],
         handleAlarmInfosCache:[],//对处理过的报警记录的缓存
-        searchUuid:''
+        searchUuid:'',
+        isHistoryModalShow:false,
+        infoNow:{}
       }
     },
     methods:{
@@ -106,6 +116,16 @@ export default {
         this.handleAlarmInfos = this.handleAlarmInfosCache.filter(ele => 
           ele.uuid.includes(this.searchUuid)
         )
+      },
+      showModal(info){
+        this.infoNow = info
+        this.isHistoryModalShow = true
+      },
+      handleInfo(info){
+        this.$http['editOneDev']({projectId:info.projectId,uuid:info.uuid,isEnable:true})
+        .then(res => {
+          this.getData()
+        })
       }
     },
     watch:{
