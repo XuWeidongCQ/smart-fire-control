@@ -16,11 +16,13 @@ import './css/form.css'
 import 'font-awesome/css/font-awesome.min.css'
 
 import util from './utils/util'
-import http from './api/http'
+import http from './api/data-http'
+import pageHttp from './api/page-http'
 
 Vue.config.productionTip = false
 Vue.prototype.$util = util
 Vue.prototype.$http = http
+Vue.prototype.$pageHttp = pageHttp
 
 
 

@@ -2,10 +2,10 @@
     <div class="logo-wrapper">
         <div id="lang">欢迎登录智慧消防管理系统</div>
         <div>
-            <img src="../../assets/login/cqu-logo_nobg.jpg" alt="" width="300px">
+            <img src="../../assets/login/cqu-logo_nobg.jpg" alt="" width="250px">
         </div>
         <div>
-            <img src="../../assets/login/company_logo.jpg" alt="" width="300px">
+            <img src="../../assets/login/company_logo.jpg" alt="" width="250px">
         </div>
     </div>
 </template>

@@ -9,7 +9,7 @@
            </keep-alive>
        </div>
        <div class="footer">
-           <span>重庆大学微系统研究中心©2019</span>
+           <span>Copyright©2019 重庆大学微系统研究中心余华课题组 版权所有 渝ICP备19011317号 最佳分辨率1920*1080</span>
        </div>
     </div>
 </template>

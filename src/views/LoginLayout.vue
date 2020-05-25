@@ -7,6 +7,9 @@
             <div class="right">
                 <login-form></login-form>
             </div>
+            <div class="copy-right">
+                <span>Copyright©2019 重庆大学微系统研究中心余华课题组 版权所有 渝ICP备19011317号 最佳分辨率1920*1080</span>
+            </div>
         </div>
     </div>
 </template>
@@ -40,11 +43,19 @@ export default {
     background-color:rgba(255, 255, 255, 0.4);
     border-radius: 20px;
     animation: moveIn 1s ease 0s;
+    position: relative;
    
 }
 .login-form-wrapper > div {
     flex: 1;
     padding: 50px;
+}
+.copy-right {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    font-size: 12px;
 }
 
 @keyframes moveIn {

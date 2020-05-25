@@ -5,7 +5,7 @@
       <table class="xu-table xu-table-center xu-table-hover">
         <thead>
           <tr>
-            <th style="width:50px">#ID</th>
+            <!-- <th style="width:50px">#ID</th> -->
             <th style="width:250px">项目名称</th>
             <th style="width:250px">项目地址</th>
             <th style="width:150px">经纬度</th>
@@ -17,7 +17,7 @@
         </thead>
         <tbody>
           <tr v-for="project in projectList.slice((pageNow-1)*MAX_NUM,pageNow*MAX_NUM)" :key="project.projectId">
-            <td>{{ project.projectId }}</td>
+            <!-- <td>{{ project.projectId }}</td> -->
             <td>{{ project.projectName }}</td>
             <td>{{ project.location }}</td>
             <td>({{project.longitude}}，{{project.latitude}})</td>

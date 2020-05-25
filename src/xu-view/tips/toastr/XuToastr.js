@@ -3,6 +3,10 @@ import XuToastr from './XuToastr.vue'
 
 const showToastr = function(msg,callback){
   const myComponent = Vue.extend(XuToastr)
+  const ele = document.getElementById('xu-toastr-backdrop')
+  if(ele){
+    return
+  }
   const toastr = new myComponent({
     el:document.createElement('div'),
     data(){
@@ -18,8 +22,8 @@ const showToastr = function(msg,callback){
       },
       confirm(){
         this.show = false;
-        document.body.removeChild(toastr.$el)
-        callback()
+        document.body.removeChild(toastr.$el);
+        callback();
       }
     }
   })

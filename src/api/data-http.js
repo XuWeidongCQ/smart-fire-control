@@ -1,18 +1,21 @@
 
 import axios from 'axios'
+import router from '../router/index'
 import homePageApi from './home-page-api'
 import infoPageApi from './info-page-api'
 import showAlert from '@/xu-view/tips/alert/XuAlert'
 import showToastr from '@/xu-view/tips/toastr/XuToastr.js'
 
-let axiosInst = axios.create({
-  baseURL:'https://www.zhxf.yuhualab.com:8080'
+let dataPool = axios.create({
+  baseURL:'https://www.zhxf.yuhualab.com:8080',
 });
 
 
 //请求拦截器
-axiosInst.interceptors.request.use(config =>{
+dataPool.interceptors.request.use(config =>{
+  // console.log(config.headers)
   const {method} = config
+  config.headers.common['token'] = window.sessionStorage['token']
   if(method === 'delete'){
     return new Promise(resolve => {
       showToastr('确定删除吗？',() => resolve(config))
@@ -26,7 +29,7 @@ axiosInst.interceptors.request.use(config =>{
 });
 
 //响应拦截器
-axiosInst.interceptors.response.use(res=>{
+dataPool.interceptors.response.use(res=>{
   // console.log(res);
   //1.reqConfig    -HTTP请求的配置
   //2.resData      -HTTP请求响应的数据
@@ -39,7 +42,14 @@ axiosInst.interceptors.response.use(res=>{
   // console.log(`请求方法为${reqMethod}`,`请求数据为${reqData}`,'请求参数为',reqParams);
   // console.log(reqConfig);
   const {code,msg} = resData;
-
+  // console.log(resData)
+  if(code === 401){
+    showToastr('登录已过时,请重新登录',() => {
+      router.push('/login')
+    })
+    throw new Error('登录过时')
+    // return 
+  }
   switch (reqMethod) {
     //1.获取数据，不进行统一处理
     case "get":
@@ -95,22 +105,22 @@ for (let key in allApi){
   switch (method) {
     case 'get':
       Http[key] = function(config={}) {
-        return axiosInst[method](url,config)
+        return dataPool[method](url,config)
       };
       break;
     case 'delete':
       Http[key] = function(config={}) {
-        return axiosInst[method](url,config)
+        return dataPool[method](url,config)
       };
       break;
     case 'post':
       Http[key] = function (data=[],config={}) {
-        return axiosInst[method](url,data,config)
+        return dataPool[method](url,data,config)
       };
       break;
     case 'put':
       Http[key] = function (data=[],config={}) {
-        return axiosInst[method](url,data,config)
+        return dataPool[method](url,data,config)
       };
       break;
     default:

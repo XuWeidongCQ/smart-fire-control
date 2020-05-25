@@ -2,25 +2,42 @@
     <div class="form-wrapper">
         <div class="username">请输入用户名:</div>
         <div>
-            <input type="text"  placeholder="用户名">
+            <input type="text"  placeholder="用户名" v-model="username">
         </div>
         <div class="password">请输入密码:</div>
         <div>
-            <input type="text" placeholder="密码">
+            <input type="text" placeholder="密码" v-model="password" @keydown.enter="login">
         </div>
         <div class="btn-wrapper">
-           <input type="button" value="登录" @click="login">
-            <p>忘记密码？</p>
+            <input type="button" value="登录" @click="login">
         </div>
     </div>
 </template>
 
 <script>
+import showAlert from '@/xu-view/tips/alert/XuAlert.js'
 export default {
     name:'LoginForm',
+    data(){
+        return {
+            username:'',
+            password:''
+        }
+    },
     methods:{
         login:function(){
-            this.$router.push('/home')
+            this.$pageHttp['login']({username:this.username,password:this.password})
+            .then(res => {
+                const { data:{code,msg} } = res
+                if(code === 200){
+                    const {expire,token} = msg
+                    // console.log(token)
+                    window.sessionStorage['token'] = token
+                    this.$router.push('/home')
+                } else {
+                    showAlert(msg,'failure')
+                }
+            })
         }
     }
 }
@@ -43,6 +60,10 @@ export default {
     border-radius: 5px;
     border: 1px solid #cccccc;
     font-size: 16px;
+}
+.form-wrapper input:hover,
+.form-wrapper input:focus{
+    border-color: #3a9fd3;
 }
 .btn-wrapper {
     margin-top: 20px;

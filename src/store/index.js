@@ -10,6 +10,9 @@ export default new Vuex.Store({
       infoWindowPos:{},
       infoWindowShow:false,
       projectNow:{}
+    },
+    auth:{
+      token:''
     }
   },
   mutations: {
@@ -27,6 +30,9 @@ export default new Vuex.Store({
     },
     changeProjectNow:function(state,payload){
       state.map.projectNow = payload
+    },
+    changeToken:function(state,payload){
+      state.auth.token = payload
     }
   },
   actions: {

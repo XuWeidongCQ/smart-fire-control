@@ -1,6 +1,6 @@
 <template>
-  <div class="xu-toastr-backdrop" @click.self="cancel">
-    <div class="xu-toastr-wrapper" v-show="show">
+  <div id="xu-toastr-backdrop" @click.self="cancel" v-show="show">
+    <div class="xu-toastr-wrapper">
       <div class="toastr-msg-wrapper">
         <span class="fa fa-warning"></span>
         <span>{{ msg }}</span>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style scoped>
-.xu-toastr-backdrop {
+#xu-toastr-backdrop {
   position: fixed;
   top: 0;
   bottom: 0;
