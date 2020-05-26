@@ -39,7 +39,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="no-warnings" v-if="unhandleAlarmInfos.length === 0">
+          <div class="no-warnings" v-show="unhandleAlarmInfos.length === 0">
             <span class="no-warnings-info">暂无未处理的报警信息</span>
           </div>
         </div>
@@ -82,21 +82,27 @@ export default {
         handleAlarmInfosCache:[],//对处理过的报警记录的缓存
         searchUuid:'',
         isHistoryModalShow:false,
-        infoNow:{}
+        infoNow:{},
+        timer:null
       }
     },
     methods:{
-      getData:function(){
-        this.unhandleAlarmInfos = []
+      getUnhandleData:function(){
         this.$http['getUnprocessAlarm']()
         .then(res => {
           const {msg} = res
-          msg.forEach(ele => {
-            ele.gmtCreated = this.$util.getFormatterDate(ele.gmtCreated*1000).YYYYMMDDHHMM
-            this.unhandleAlarmInfos.push(ele)
+          this.unhandleAlarmInfos = msg.map(ele => {
+            ele.gmtCreate = this.$util.getFormatterDate(ele.gmtCreate*1000).YYYYMMDDHHMM
+            return ele
           })
+          clearInterval(this.timer)
+          this.timer = setInterval(()=>{
+            console.log(1)
+            this.getUnhandleData()
+          },10000)
         })
-
+      },
+      getHandleData:function(){
         this.handleAlarmInfos = []
         this.$http['getDevAlarmInfos']()
         .then(res => {
@@ -105,7 +111,6 @@ export default {
             if(ele.processMark){
               ele.gmtModified = this.$util.getFormatterDate(ele.gmtModified*1000).YYYYMMDDHHMM
               this.handleAlarmInfos.push(ele)
-              
             }
           })
           this.handleAlarmInfosCache = this.handleAlarmInfos
@@ -124,7 +129,8 @@ export default {
       handleInfo(info){
         this.$http['editOneDev']({projectId:info.projectId,uuid:info.uuid,isEnable:true})
         .then(res => {
-          this.getData()
+          this.getUnhandleData()
+          this.getHandleData()
         })
       }
     },
@@ -136,7 +142,11 @@ export default {
       }
     },
     created(){
-      this.getData()
+      this.getUnhandleData()
+      this.getHandleData()
+    },
+    beforeDestroy(){
+      clearInterval(this.timer)
     }
 }
 </script>
