@@ -6,10 +6,11 @@
         </div>
         <div class="password">请输入密码:</div>
         <div>
-            <input type="text" placeholder="密码" v-model="password" @keydown.enter="login">
+            <input type="password" placeholder="密码" v-model="password" @keydown.enter="login">
         </div>
         <div class="btn-wrapper">
             <input type="button" value="登录" @click="login">
+            <p>没有账号？注册一个</p>
         </div>
     </div>
 </template>
@@ -76,6 +77,11 @@ export default {
 }
 .btn-wrapper > input:hover {
     background-color: #269e40;
+}
+.btn-wrapper > p {
+    cursor: pointer;
+    font-size: 14px;
+    color: cornflowerblue;
 }
 </style>
 
