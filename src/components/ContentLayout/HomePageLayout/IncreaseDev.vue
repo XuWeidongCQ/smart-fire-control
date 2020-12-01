@@ -66,6 +66,7 @@ export default {
       this.$http['getMonthlyProjects']({params:{year:year}})
       .then(res => {
         const { msg } = res;
+        // console.log(msg)
         msg.forEach( ele => {
           this.monthList.push(ele)
         })

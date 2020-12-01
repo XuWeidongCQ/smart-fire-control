@@ -90,14 +90,18 @@ export default {
       getUnhandleData:function(){
         this.$http['getUnprocessAlarm']()
         .then(res => {
-          const {msg} = res
+          let {msg} = res
+          if(!msg) {
+            msg = []
+          }
           this.unhandleAlarmInfos = msg.map(ele => {
             ele.gmtCreate = this.$util.getFormatterDate(ele.gmtCreate*1000).YYYYMMDDHHMM
             return ele
           })
+          // console.log(this.unhandleAlarmInfos)
           clearInterval(this.timer)
           this.timer = setInterval(()=>{
-            console.log(1)
+            console.log('定时获取报警信息')
             this.getUnhandleData()
           },10000)
         })

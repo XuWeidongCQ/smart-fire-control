@@ -6,8 +6,10 @@ import infoPageApi from './info-page-api'
 import showAlert from '@/xu-view/tips/alert/XuAlert'
 import showToastr from '@/xu-view/tips/toastr/XuToastr.js'
 
+//baseURL:'https://www.zhxf.yuhualab.com:8080',
+const isDevelopmentMode = false
 let dataPool = axios.create({
-  baseURL:'https://www.zhxf.yuhualab.com:8080',
+  baseURL:isDevelopmentMode ? 'http://172.20.29.91:8888' : 'http://www.zhxf.yuhualab.com:8888',
 });
 
 

@@ -1,0 +1,102 @@
+Date : 2020-09-04 10:35:33
+Directory : f:\VSCodeWorkspace\smart-fire-control\src
+Total : 54 files,  4173 codes, 117 comments, 236 blanks, all 4526 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Vue.js     |         34 |      3,293 |         56 |        118 |      3,467 |
+| JavaScript |         12 |        522 |         44 |         75 |        641 |
+| CSS        |          8 |        358 |         17 |         43 |        418 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                       | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                          |         54 |      4,173 |        117 |        236 |      4,526 |
+| api                                                                                                                        |          5 |        210 |         40 |         39 |        289 |
+| assets                                                                                                                     |          1 |         89 |          0 |          1 |         90 |
+| components                                                                                                                 |         23 |      2,482 |         21 |         80 |      2,583 |
+| components\ContentLayout                                                                                                   |         19 |      2,059 |         19 |         62 |      2,140 |
+| components\ContentLayout\HomePageLayout                                                                                    |          9 |      1,071 |         10 |         34 |      1,115 |
+| components\ContentLayout\HomePageLayout\IncreaseDevComp                                                                    |          1 |         86 |          0 |          2 |         88 |
+| components\ContentLayout\HomePageLayout\PieChartComp                                                                       |          3 |        246 |          0 |         11 |        257 |
+| components\ContentLayout\info-page                                                                                         |          7 |        795 |          8 |         14 |        817 |
+| components\ContentLayout\info-page\ProjectCasesComp                                                                        |          4 |        466 |          0 |          8 |        474 |
+| components\LoginLayout                                                                                                     |          2 |        109 |          1 |         12 |        122 |
+| components\share-components                                                                                                |          2 |        314 |          1 |          6 |        321 |
+| css                                                                                                                        |          8 |        358 |         17 |         43 |        418 |
+| router                                                                                                                     |          1 |         56 |          0 |          9 |         65 |
+| store                                                                                                                      |          1 |         40 |          0 |          3 |         43 |
+| utils                                                                                                                      |          1 |         43 |          4 |         11 |         58 |
+| views                                                                                                                      |          2 |        112 |          1 |          8 |        121 |
+| xu-view                                                                                                                    |         10 |        745 |         34 |         30 |        809 |
+| xu-view\form                                                                                                               |          3 |        225 |          2 |          9 |        236 |
+| xu-view\modal                                                                                                              |          1 |         54 |          0 |          4 |         58 |
+| xu-view\tips                                                                                                               |          4 |        172 |          0 |          8 |        180 |
+| xu-view\tips\alert                                                                                                         |          2 |         74 |          0 |          4 |         78 |
+| xu-view\tips\toastr                                                                                                        |          2 |         98 |          0 |          4 |        102 |
++----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                   | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| f:\VSCodeWorkspace\smart-fire-control\src\App.vue                                                                          | Vue.js     |         13 |          0 |          2 |         15 |
+| f:\VSCodeWorkspace\smart-fire-control\src\api\auth-api.js                                                                  | JavaScript |          7 |          0 |          1 |          8 |
+| f:\VSCodeWorkspace\smart-fire-control\src\api\data-http.js                                                                 | JavaScript |         97 |         23 |         13 |        133 |
+| f:\VSCodeWorkspace\smart-fire-control\src\api\home-page-api.js                                                             | JavaScript |         39 |          9 |         11 |         59 |
+| f:\VSCodeWorkspace\smart-fire-control\src\api\info-page-api.js                                                             | JavaScript |         31 |          7 |          8 |         46 |
+| f:\VSCodeWorkspace\smart-fire-control\src\api\page-http.js                                                                 | JavaScript |         36 |          1 |          6 |         43 |
+| f:\VSCodeWorkspace\smart-fire-control\src\assets\map-style.js                                                              | JavaScript |         89 |          0 |          1 |         90 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout.vue                                      | Vue.js     |         53 |          0 |          5 |         58 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout\AlertInfos.vue                           | Vue.js     |        193 |          1 |          4 |        198 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout\IncreaseDev.vue                          | Vue.js     |        172 |          1 |          7 |        180 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout\IncreaseDevComp\NewIncProjectModal.vue   | Vue.js     |         86 |          0 |          2 |         88 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout\Map.vue                                  | Vue.js     |        190 |          5 |          4 |        199 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout\PieChartComp\NormalAndAbnormalDevPie.vue | Vue.js     |         76 |          0 |          3 |         79 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout\PieChartComp\OnOffDevPie.vue             | Vue.js     |         75 |          0 |          4 |         79 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout\PieChartComp\TwoRatePie.vue              | Vue.js     |         95 |          0 |          4 |         99 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout\PieCharts.vue                            | Vue.js     |         49 |          0 |          2 |         51 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\HomePageLayout\RegisterDev.vue                          | Vue.js     |        135 |          3 |          4 |        142 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\InfoPageLayout.vue                                      | Vue.js     |         69 |          0 |          2 |         71 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\Navbar.vue                                              | Vue.js     |         71 |          1 |          7 |         79 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\info-page\AddProjectForm.vue                            | Vue.js     |        121 |          2 |          2 |        125 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\info-page\MiniMap.vue                                   | Vue.js     |         49 |          0 |          2 |         51 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\info-page\ProjectCases.vue                              | Vue.js     |        159 |          6 |          2 |        167 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\info-page\ProjectCasesComp\AddDevModal.vue              | Vue.js     |        116 |          0 |          2 |        118 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\info-page\ProjectCasesComp\EditDevModal.vue             | Vue.js     |        114 |          0 |          2 |        116 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\info-page\ProjectCasesComp\EditModal.vue                | Vue.js     |         87 |          0 |          2 |         89 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\ContentLayout\info-page\ProjectCasesComp\LookDevModal.vue             | Vue.js     |        149 |          0 |          2 |        151 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\LoginLayout\LoginForm.vue                                             | Vue.js     |         83 |          1 |          5 |         89 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\LoginLayout\Logo.vue                                                  | Vue.js     |         26 |          0 |          7 |         33 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\share-components\HistoryDataModal.vue                                 | Vue.js     |        173 |          0 |          3 |        176 |
+| f:\VSCodeWorkspace\smart-fire-control\src\components\share-components\SensorDataModal.vue                                  | Vue.js     |        141 |          1 |          3 |        145 |
+| f:\VSCodeWorkspace\smart-fire-control\src\css\badge.css                                                                    | CSS        |         27 |          0 |          1 |         28 |
+| f:\VSCodeWorkspace\smart-fire-control\src\css\box.css                                                                      | CSS        |         60 |          3 |          5 |         68 |
+| f:\VSCodeWorkspace\smart-fire-control\src\css\button.css                                                                   | CSS        |         60 |          3 |          4 |         67 |
+| f:\VSCodeWorkspace\smart-fire-control\src\css\exclusive.css                                                                | CSS        |         10 |          0 |          3 |         13 |
+| f:\VSCodeWorkspace\smart-fire-control\src\css\flex.css                                                                     | CSS        |         79 |          0 |         12 |         91 |
+| f:\VSCodeWorkspace\smart-fire-control\src\css\form.css                                                                     | CSS        |         42 |          0 |          2 |         44 |
+| f:\VSCodeWorkspace\smart-fire-control\src\css\remove-default.css                                                           | CSS        |         31 |          1 |          9 |         41 |
+| f:\VSCodeWorkspace\smart-fire-control\src\css\table.css                                                                    | CSS        |         49 |         10 |          7 |         66 |
+| f:\VSCodeWorkspace\smart-fire-control\src\main.js                                                                          | JavaScript |         25 |          0 |         10 |         35 |
+| f:\VSCodeWorkspace\smart-fire-control\src\router\index.js                                                                  | JavaScript |         56 |          0 |          9 |         65 |
+| f:\VSCodeWorkspace\smart-fire-control\src\store\index.js                                                                   | JavaScript |         40 |          0 |          3 |         43 |
+| f:\VSCodeWorkspace\smart-fire-control\src\utils\util.js                                                                    | JavaScript |         43 |          4 |         11 |         58 |
+| f:\VSCodeWorkspace\smart-fire-control\src\views\ContentLayout.vue                                                          | Vue.js     |         45 |          1 |          3 |         49 |
+| f:\VSCodeWorkspace\smart-fire-control\src\views\LoginLayout.vue                                                            | Vue.js     |         67 |          0 |          5 |         72 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\XuChart.vue                                                              | Vue.js     |        124 |         26 |          7 |        157 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\XuPager.vue                                                              | Vue.js     |        170 |          6 |          2 |        178 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\form\TextForm.vue                                                        | Vue.js     |         60 |          0 |          2 |         62 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\form\XuSel.vue                                                           | Vue.js     |        106 |          2 |          5 |        113 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\form\XuSwi.vue                                                           | Vue.js     |         59 |          0 |          2 |         61 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\modal\XuModal.vue                                                        | Vue.js     |         54 |          0 |          4 |         58 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\tips\alert\XuAlert.js                                                    | JavaScript |         28 |          0 |          1 |         29 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\tips\alert\XuAlert.vue                                                   | Vue.js     |         46 |          0 |          3 |         49 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\tips\toastr\XuToastr.js                                                  | JavaScript |         31 |          0 |          1 |         32 |
+| f:\VSCodeWorkspace\smart-fire-control\src\xu-view\tips\toastr\XuToastr.vue                                                 | Vue.js     |         67 |          0 |          3 |         70 |
+| Total                                                                                                                      |            |      4,173 |        117 |        236 |      4,526 |
++----------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

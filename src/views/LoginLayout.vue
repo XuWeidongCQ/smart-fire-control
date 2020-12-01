@@ -8,7 +8,9 @@
                 <login-form></login-form>
             </div>
             <div class="copy-right">
-                <span>Copyright©2019 重庆大学微系统研究中心余华课题组 版权所有 渝ICP备19011317号 最佳分辨率1920*1080</span>
+                <p>Copyright©2019 重庆大学微系统研究中心余华课题组 版权所有</p>
+                <p>渝ICP备19011317号</p>
+                <p>最佳分辨率1920*1080</p>
             </div>
         </div>
     </div>
@@ -56,6 +58,8 @@ export default {
     transform: translateX(-50%);
     bottom: 0px;
     font-size: 12px;
+    text-align: center;
+    margin-bottom: -10px;
 }
 
 @keyframes moveIn {
