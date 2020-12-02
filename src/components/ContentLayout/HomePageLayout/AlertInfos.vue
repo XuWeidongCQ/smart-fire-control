@@ -87,6 +87,7 @@ export default {
       }
     },
     methods:{
+      //获取未处理的报警信息
       getUnhandleData:function(){
         this.$http['getUnprocessAlarm']()
         .then(res => {
@@ -106,16 +107,16 @@ export default {
           },10000)
         })
       },
+      //获取已经处理的报警信息
       getHandleData:function(){
         this.handleAlarmInfos = []
         this.$http['getDevAlarmInfos']()
         .then(res => {
           const {msg} = res
+          // console.log(res)
           msg.forEach(ele => {
-            if(ele.processMark){
-              ele.gmtModified = this.$util.getFormatterDate(ele.gmtModified*1000).YYYYMMDDHHMM
-              this.handleAlarmInfos.push(ele)
-            }
+            ele.gmtModified = this.$util.getFormatterDate(ele.gmtModified*1000).YYYYMMDDHHMM
+            this.handleAlarmInfos.push(ele)
           })
           this.handleAlarmInfosCache = this.handleAlarmInfos
         })

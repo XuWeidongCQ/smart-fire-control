@@ -9,7 +9,7 @@ import showToastr from '@/xu-view/tips/toastr/XuToastr.js'
 //baseURL:'https://www.zhxf.yuhualab.com:8080',
 const isDevelopmentMode = false
 let dataPool = axios.create({
-  baseURL:isDevelopmentMode ? 'http://172.20.29.91:8888' : 'http://www.zhxf.yuhualab.com:8888',
+  baseURL:isDevelopmentMode ? 'http://172.20.29.91:8888' : 'https://www.zhxf.yuhualab.com:8888',
 });
 
 

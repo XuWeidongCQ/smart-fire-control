@@ -12,10 +12,10 @@
         <bm-scale anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-scale>
         <!-- 坐标点 -->
         <bm-marker 
-         v-for="project in projectList"
+         v-for="(project,index) in projectList"
          @mouseover="infoWindowShow(project)"
          @click="project.deviceNumber > 0 && showModal(project)" 
-         :key="project.projectId"
+         :key="index"
          :icon="selIcon(project.deviceNumber)"
          :position="{lng:project.longitude,lat:project.latitude}"
         >
@@ -83,6 +83,7 @@ export default {
         this.$http['getAllProjectsInfos']()
         .then(res => {
           const {msg} = res
+          this.projectList = []
           msg.forEach(ele => {
             this.projectList.push(ele)
           })

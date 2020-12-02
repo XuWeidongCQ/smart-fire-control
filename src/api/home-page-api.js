@@ -49,7 +49,7 @@ const HOME_PAGE_API = {
       url:'/caracara/info/project/list/increase'
     },
   
-    //9.获取所有的报警信息
+    //9.获取所有的已经处理过的报警信息
     getDevAlarmInfos:{
       method:'get',
       url:'/caracara/info/alarm'

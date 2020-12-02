@@ -19,8 +19,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="project in projectList.slice((pageNow-1)*MAX_NUM,pageNow*MAX_NUM)" 
-                :key="project.projectId">
+            <tr v-for="(project,index) in projectList.slice((pageNow-1)*MAX_NUM,pageNow*MAX_NUM)" 
+                :key="index">
               <td>
                 <span :class="{'link':project.deviceNumber > 0}" 
                       @click="project.deviceNumber > 0 && showModal(project)">
